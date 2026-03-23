@@ -1,10 +1,11 @@
-/* Reset básico para manter consistência entre navegadores */
+/* Tirando espaçamentos padrão do navegador para a página ficar mais organizada */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Cores principais do site no tema claro */
 :root {
   --bg: #f4f7fb;
   --bg-card: #ffffff;
@@ -18,6 +19,7 @@
   --sombra: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
+/* Cores alternativas caso o tema escuro seja usado */
 body.dark {
   --bg: #111827;
   --bg-card: #1f2937;
@@ -31,6 +33,7 @@ body.dark {
   --sombra: 0 8px 24px rgba(0, 0, 0, 0.25);
 }
 
+/* Estilo geral do corpo da página */
 body {
   font-family: Arial, Helvetica, sans-serif;
   background-color: var(--bg);
@@ -38,6 +41,7 @@ body {
   line-height: 1.6;
 }
 
+/* Cabeçalho fixo no topo com nome e menu */
 .topo {
   position: sticky;
   top: 0;
@@ -51,22 +55,26 @@ body {
   box-shadow: var(--sombra);
 }
 
+/* Serve como referência para o posicionamento do menu no celular */
 .topo nav {
   position: relative;
 }
 
+/* Nome exibido no topo do site */
 .logo {
   font-size: 1.3rem;
   font-weight: bold;
   color: var(--primaria);
 }
 
+/* Menu principal das páginas */
 .menu {
   list-style: none;
   display: flex;
   gap: 14px;
 }
 
+/* Aparência dos links do menu */
 .menu a {
   text-decoration: none;
   color: var(--texto);
@@ -77,12 +85,14 @@ body {
   display: block;
 }
 
+/* Destaque ao passar o mouse e na página ativa */
 .menu a:hover,
 .menu a.ativo {
   background-color: var(--primaria);
   color: #fff;
 }
 
+/* Botão do menu hambúrguer, usado no celular */
 .menu-toggle {
   display: none;
   font-size: 1.8rem;
@@ -93,12 +103,14 @@ body {
   z-index: 1100;
 }
 
+/* Área principal do conteúdo */
 .container {
   max-width: 1100px;
   margin: 0 auto;
   padding: 32px 20px;
 }
 
+/* Bloco inicial da página principal com duas colunas */
 .hero {
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -106,12 +118,14 @@ body {
   margin-bottom: 28px;
 }
 
+/* Títulos principais */
 .hero h1,
 .pagina-topo h1 {
   font-size: 2rem;
   margin-bottom: 16px;
 }
 
+/* Cor mais suave para parágrafos e listas */
 .hero-texto p,
 .pagina-topo p,
 .bloco p,
@@ -121,6 +135,7 @@ body {
   color: var(--texto-suave);
 }
 
+/* Cartões e blocos com fundo branco, borda e sombra */
 .hero-card,
 .card,
 .bloco {
@@ -131,28 +146,33 @@ body {
   box-shadow: var(--sombra);
 }
 
+/* Recuo interno das listas */
 .hero-card ul,
 .card ul,
 .lista-links {
   padding-left: 20px;
 }
 
+/* Grade usada nas páginas com cards */
 .cards-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
 }
 
+/* Espaço abaixo dos subtítulos dos cards e blocos */
 .card h2,
 .bloco h2 {
   margin-bottom: 12px;
 }
 
+/* Espaçamento extra em blocos específicos */
 .tema-box,
 .links-box {
   margin-top: 24px;
 }
 
+/* Botões gerais do site */
 .botao {
   background-color: var(--primaria);
   color: #fff;
@@ -164,26 +184,31 @@ body {
   transition: 0.3s;
 }
 
+/* Efeito quando passa o mouse no botão */
 .botao:hover {
   background-color: var(--primaria-hover);
 }
 
+/* Grade da página de contato */
 .contato-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 24px;
 }
 
+/* Espaço entre os campos do formulário */
 .campo {
   margin-bottom: 16px;
 }
 
+/* Estilo dos rótulos dos campos */
 .campo label {
   display: block;
   margin-bottom: 6px;
   font-weight: bold;
 }
 
+/* Aparência dos inputs e textarea */
 .campo input,
 .campo textarea {
   width: 100%;
@@ -195,23 +220,27 @@ body {
   font-size: 1rem;
 }
 
+/* Destaque no campo quando ele está selecionado */
 .campo input:focus,
 .campo textarea:focus {
   outline: none;
   border-color: var(--primaria);
 }
 
+/* Mensagem de erro da validação */
 .erro {
   color: var(--erro);
   font-size: 0.9rem;
 }
 
+/* Mensagem de sucesso após envio do formulário */
 .sucesso {
   color: var(--sucesso);
   font-weight: bold;
   margin-top: 12px;
 }
 
+/* Rodapé do site */
 .rodape {
   text-align: center;
   padding: 20px;
@@ -220,33 +249,39 @@ body {
   margin-top: 30px;
 }
 
+/* Estilo dos links da área de contato e portfólio */
 .lista-links a,
 .contato-info a {
   color: var(--primaria);
   text-decoration: none;
 }
 
+/* Efeito ao passar o mouse nos links */
 .lista-links a:hover,
 .contato-info a:hover {
   text-decoration: underline;
 }
 
-/* Responsividade para celular */
+/* Ajustes para telas menores, como celular */
 @media (max-width: 768px) {
+  /* Faz o topo se ajustar melhor no celular */
   .topo {
     flex-wrap: wrap;
   }
 
+  /* No celular, os blocos passam a ficar um embaixo do outro */
   .hero,
   .cards-grid,
   .contato-grid {
     grid-template-columns: 1fr;
   }
 
+  /* Mostra o botão do menu hambúrguer */
   .menu-toggle {
     display: block;
   }
 
+  /* Esconde o menu por padrão no celular */
   .menu {
     display: none;
     flex-direction: column;
@@ -262,15 +297,18 @@ body {
     z-index: 1200;
   }
 
+  /* Quando o JavaScript adiciona a classe show, o menu aparece */
   .menu.show {
     display: flex;
   }
 
+  /* Reduz um pouco o tamanho dos títulos no celular */
   .hero h1,
   .pagina-topo h1 {
     font-size: 1.6rem;
   }
 
+  /* Diminui as margens laterais em telas pequenas */
   .container {
     padding: 24px 16px;
   }
