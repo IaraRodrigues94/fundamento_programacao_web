@@ -51,6 +51,10 @@ body {
   box-shadow: var(--sombra);
 }
 
+.topo nav {
+  position: relative;
+}
+
 .logo {
   font-size: 1.3rem;
   font-weight: bold;
@@ -70,6 +74,7 @@ body {
   padding: 8px 12px;
   border-radius: 8px;
   transition: 0.3s;
+  display: block;
 }
 
 .menu a:hover,
@@ -80,11 +85,12 @@ body {
 
 .menu-toggle {
   display: none;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   background: none;
   border: none;
   cursor: pointer;
   color: var(--texto);
+  z-index: 1100;
 }
 
 .container {
@@ -110,7 +116,8 @@ body {
 .pagina-topo p,
 .bloco p,
 .card p,
-.card li {
+.card li,
+.contato-info p {
   color: var(--texto-suave);
 }
 
@@ -185,6 +192,13 @@ body {
   border-radius: 10px;
   background-color: transparent;
   color: var(--texto);
+  font-size: 1rem;
+}
+
+.campo input:focus,
+.campo textarea:focus {
+  outline: none;
+  border-color: var(--primaria);
 }
 
 .erro {
@@ -206,7 +220,23 @@ body {
   margin-top: 30px;
 }
 
+.lista-links a,
+.contato-info a {
+  color: var(--primaria);
+  text-decoration: none;
+}
+
+.lista-links a:hover,
+.contato-info a:hover {
+  text-decoration: underline;
+}
+
+/* Responsividade para celular */
 @media (max-width: 768px) {
+  .topo {
+    flex-wrap: wrap;
+  }
+
   .hero,
   .cards-grid,
   .contato-grid {
@@ -221,17 +251,27 @@ body {
     display: none;
     flex-direction: column;
     position: absolute;
-    top: 70px;
-    right: 20px;
+    top: 55px;
+    right: 0;
     width: 220px;
     background-color: var(--bg-card);
     border: 1px solid var(--borda);
     border-radius: 12px;
     padding: 12px;
     box-shadow: var(--sombra);
+    z-index: 1200;
   }
 
   .menu.show {
     display: flex;
+  }
+
+  .hero h1,
+  .pagina-topo h1 {
+    font-size: 1.6rem;
+  }
+
+  .container {
+    padding: 24px 16px;
   }
 }
