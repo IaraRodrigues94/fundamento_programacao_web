@@ -55,3 +55,13 @@ function validarEmail(email) {
   const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return regex.test(email);
 }
+
+const menuToggle = document.getElementById('menu-toggle');
+const menu = document.getElementById('menu');
+
+//Função para abrir no celular
+if (menuToggle && menu) {
+  menuToggle.addEventListener('click', function () {
+    menu.classList.toggle('show');
+  });
+}
